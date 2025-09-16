@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"></link>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'place_to_go:home_page' %}" class="logo">🌍 Places to Go</a>
+            <ul class="nav-menu">
+                <li><a href="{% url 'place_to_go:place_list' %}" class="nav-link">All Places</a></li>
+                <li><a href="{% url 'place_to_go:add_place' %}" class="nav-link">Add places</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+
+    <footer>
+        <h3>Дарій Лапухов</h3>
+    </footer>
+</body>
+</html>

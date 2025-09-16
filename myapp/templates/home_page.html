@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block title %}Home - Places to Go{% endblock %}  
+
+{% block content %}
+    <div>
+        <h1>Цей сайт призначений для додавання найулюбленіших місць, та ділитися ними з іншими за допомогою рандомайзеру</h1>
+        {% if selected_place %}
+            <h3>Selected place: {{ selected_place }}</h3>
+        {% elif not selected_place %}
+            <h3>U need to add places to the list</h3>
+        {% endif %}
+        <a href="{% url 'place_to_go:home_page' %}">Regenerate place</a>
+    </div>
+{% endblock %}

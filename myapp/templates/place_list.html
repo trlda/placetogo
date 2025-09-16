@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div>
+        <h2>All places</h2>
+        {% if place_to_go %}
+        <ul>
+            {% for place, priority in place_to_go %}
+
+                <li>{{ place }} : {% for _ in 'x'|ljust:priority %}★{% endfor %}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No places added</p>
+        {% endif %}
+        <a href="{% url 'place_to_go:add_place' %}">Add place</a>
+    </div>
+{% endblock %}
+
